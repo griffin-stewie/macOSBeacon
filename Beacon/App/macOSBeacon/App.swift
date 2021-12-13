@@ -7,12 +7,18 @@
 //
 
 import SwiftUI
+import AppFeature
+import Beacon
 
 @main
 struct macOSBeaconApp: App {
+
+    let peripheral: Peripheral = Peripheral()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+             ContentView()
+                 .environmentObject(peripheral.peripheralViewModel)
         }
     }
 }
